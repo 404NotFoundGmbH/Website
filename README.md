@@ -1,2 +1,2 @@
 # Website
-Website für den Delivery-system Projekt.
+Website für das Delivery-system Projekt.
