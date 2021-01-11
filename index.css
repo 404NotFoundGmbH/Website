@@ -1,0 +1,209 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+</style>
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	background: rgba(255,255,255,0.5););
+	text-transform: capitalize;
+	font-family: sans-serif;
+	font-weight: 300;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column; 
+}
+
+header{
+	margin-left: 0%;
+	height: 100px;
+	background-color: rgb(66, 109, 237);
+}
+
+header::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+main{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.main-nav ul{
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+
+.main-nav li{
+	display: inline-block;
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+
+.main-nav li:first-child{
+	margin-left:0;
+}
+
+.main-nav a{
+	float: left;
+	color: rgb(255,255,255);
+	text-decoration: none;
+	text-transform:uppercase;
+	font-size: 17px;
+	font-weight: bold;
+
+}
+
+.main-nav a:hover{
+	color:rgb(255,255,255);
+}
+
+.main-nav a::before{
+	content: '';
+	display: block;
+	height:5px;
+	background-color: rgb(255,255,255);
+	position: absolute;
+	top:35%;
+	width: 0%;
+	transition: all ease-in-out 200ms;
+}
+
+.main-nav a:hover::before{
+	width: 100%;
+}
+
+.logo{
+	position: absolute;
+	float: left;
+	margin-right: 0;
+	padding-left:15px;
+}
+
+.intro h2{
+	font-size: 35px;
+	font-family: 'Varela', sans-serif;
+	padding-top: 5%;
+	margin:0;
+}
+
+.intro p{
+	padding-bottom: 15px;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.maps{
+	padding-top: 40px;
+	width:100%;
+	padding-bottom: 50px;
+}
+
+.slogex{
+	background-color: rgb(219, 219, 219);
+	padding-bottom: 1px;
+	width:100%;
+	height: 800px;
+}
+
+.left, .center, .right {
+
+	width: 25em;
+	margin-top: 150px;
+	margin-bottom: 200px;
+	color: rgb(0,0,0);
+	border: 4px;
+	border-color:rgb(66, 109, 237);
+	border-style:solid;
+	height: 500px;
+	text-align: center;
+	background-color: rgb(255,255,255);
+}
+
+.left{
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+	
+}
+
+.center{
+	float: left;
+	margin-left: 4%;
+}
+
+.right{
+	float: right;
+	margin-left: 5%;
+	margin-right: 5%;
+	
+	
+}
+
+.slogex i{
+	font-size: 50px;
+	color: rgb(66, 109, 237);
+	padding-bottom: 50px;
+}
+
+
+.slogex h2{
+	font-size: 40px;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 100px;
+	padding-bottom: 50px;
+	font-weight: 400;
+}
+
+.slogex p{
+	margin-right: 50px;
+	margin-left: 50px;
+}
+.right:hover,.left:hover,.center:hover{
+	transform: scale(1.1);
+  	transition: 0.3s;
+}
+
+footer{
+	background: rgb(66, 109, 237);
+	padding: 1em;
+	margin-top: auto;
+}
+
+.footer-nav ul{
+	color: rgb(255,255,255);
+	list-style: none;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+.footer-nav a{
+	text-decoration: none;
+	color: rgb(255,255,255);
+	font-family: Calibri, sans-serif;
+	text-decoration: underline;
+}
+
+.footer-nav li{
+	display: inline-block;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
