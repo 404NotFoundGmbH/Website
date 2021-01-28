@@ -12,6 +12,11 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
       rel="stylesheet"
     />
+    <link
+            rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+            type="text/css"
+    />
 
     <style>
       body {
@@ -26,97 +31,78 @@
         width: 100%;
       }
 
-      .marker {
-        background-image: url("https://cdn.glitch.com/d34dec44-3171-4d47-8d22-49d1f9c23a11%2Fmapbox-icon.png?1610374987141");
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
+      body {
+        padding: 20px;
+      }
+      button {
+        position: absolute;
+        margin-top: 20px;
+        line-height: 60px;
+        font-weight: bold;
+        padding: 0 40px;
+        background: salmon;
+        border: none;
+      }
+      button:hover {
+        background: lightsalmon;
       }
     </style>
   </head>
 
   <body>
     <!--<h1>Bartolini 2.0 Website</h1>-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+            type="text/css"
+    />
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
     <div id="map"></div>
 
     <script>
+      var ws = new WebSocket("ws://localhost:4567/websocket/echo");
+      ws.onopen = function (event) {
+        console.log(event);
+
+        ws.send("Hello World!");
+      }
+
+      ws.onclose = function (event) {
+        console.log(event);
+      }
+
+      ws.onmessage = function (event) {
+        console.log(event);
+      }
+
+      // 1. Create the button
+      var button = document.createElement("button");
+      button.innerHTML = "Do Something";
+
+      // 2. Append somewhere
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(button);
+
+      // 3. Add event handler
+      button.addEventListener ("click", function() {
+          ws.send(points);
+      });
+
       mapboxgl.accessToken =
         "pk.eyJ1Ijoic2lsYXNkZW1leiIsImEiOiJja2pzbHV0enkyNjN6Mnl0ZmhzMXZpdDB1In0.dYyuFMBeqUYo8U7z95DGfQ";
       var map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
-        center: [-122.486052, 37.830348],
-        zoom: 15
+        center: [11.645390692998262, 46.7196204501802],
+        zoom: 7
       });
 
-      // Add zoom and rotation controls to the map.
-      map.addControl(new mapboxgl.NavigationControl());
 
-      /*map.on("load", function() {
-        map.addSource("route", {
-          type: "geojson",
-          data: {
-            type: "Feature",
-            properties: {},
-            geometry: {
-              type: "LineString",
-              coordinates: [
-                [-122.48369693756104, 37.83381888486939],
-                [-122.48348236083984, 37.83317489144141],
-                [-122.48339653015138, 37.83270036637107],
-                [-122.48356819152832, 37.832056363179625],
-                [-122.48404026031496, 37.83114119107971],
-                [-122.48404026031496, 37.83049717427869],
-                [-122.48348236083984, 37.829920943955045],
-                [-122.48356819152832, 37.82954808664175],
-                [-122.48507022857666, 37.82944639795659],
-                [-122.48610019683838, 37.82880236636284],
-                [-122.48695850372314, 37.82931081282506],
-                [-122.48700141906738, 37.83080223556934],
-                [-122.48751640319824, 37.83168351665737],
-                [-122.48803138732912, 37.832158048267786],
-                [-122.48888969421387, 37.83297152392784],
-                [-122.48987674713133, 37.83263257682617],
-                [-122.49043464660643, 37.832937629287755],
-                [-122.49125003814696, 37.832429207817725],
-                [-122.49163627624512, 37.832564787218985],
-                [-122.49223709106445, 37.83337825839438],
-                [-122.49378204345702, 37.83368330777276]
-              ]
-            }
-          }
-        });
-*/
-      var geojson = {
-        type: "FeatureCollection",
-        features: [
-          {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [-77.032, 38.913]
-            },
-            properties: {
-              title: "Mapbox",
-              description: "Washington, D.C."
-            }
-          },
-          {
-            type: "Feature",
-            geometry: {
-              type: "Point",
-              coordinates: [-122.414, 37.776]
-            },
-            properties: {
-              title: "Mapbox",
-              description: "San Francisco, California"
-            }
-          }
-        ]
-      };
+
       /*
         map.addLayer({
           id: "route",
@@ -133,31 +119,24 @@
         });
       });
 */
-      // add markers to map
-      geojson.features.forEach(function(marker) {
-        // create a HTML element for each feature
-        var el = document.createElement("div");
-        el.className = "marker";
-
-        // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
-          .addTo(map);
-      });
+      let points = [];
+      //let points_lat = [];
 
       map.on("click", function(e) {
         // The event object (e) contains information like the
         // coordinates of the point on the map that was clicked.
+        var marker = new mapboxgl.Marker({color:'#FF0000'})
+                .setLngLat(e.lngLat)
+                .addTo(map);
         console.log("A click event has occurred at " + e.lngLat);
-        geojson.features.forEach(function(marker) {
-          // create a HTML element for each feature
-          var el = document.createElement("div");
-          el.className = "marker";
+        points.push(e.lngLat.lng);
+        points.push(e.lngLat.lat);
 
-          // make a marker for each feature and add to the map
-          new mapboxgl.Marker(el).setLngLat(e.lngLat).addTo(map);
-        });
       });
+
+
+
+
     </script>
   </body>
 </html>
