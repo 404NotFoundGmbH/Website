@@ -2,20 +2,21 @@
 <html>
   <head>
     <title>Bartolini 2.0</title>
-    <link
-      rel="icon"
-      href="https://cdn.glitch.com/d34dec44-3171-4d47-8d22-49d1f9c23a11%2FBartolini2-0.png?1610378291464"
-    />
 
+    <script defer src="./index.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
       rel="stylesheet"
     />
     <link
-            rel="stylesheet"
-            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
-            type="text/css"
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <link
+            rel="icon"
+            href="https://cdn.glitch.com/d34dec44-3171-4d47-8d22-49d1f9c23a11%2FBartolini2-0.png?1610378291464"
     />
 
     <style>
@@ -24,19 +25,10 @@
         padding: 0;
       }
 
-      #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-      }
-
-      body {
-        padding: 20px;
-      }
       button {
         position: absolute;
-        margin-top: 20px;
+        bottom: 1.7%;
+        right: 3%;
         line-height: 60px;
         font-weight: bold;
         padding: 0 40px;
@@ -46,12 +38,34 @@
       button:hover {
         background: lightsalmon;
       }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 90%;
+      }
+
+      body {/*
+        padding: 20px;*/
+      }
+
+      #elem2 {
+        position: absolute;
+        bottom: 1.7%;
+        right: 10%;
+
+      }
+
     </style>
   </head>
 
   <body>
-    <!--<h1>Bartolini 2.0 Website</h1>-->
+    <script>
+    </script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
     <link
             rel="stylesheet"
             href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
@@ -64,78 +78,6 @@
     <div id="map"></div>
 
     <script>
-      var ws = new WebSocket("ws://localhost:4567/websocket/echo");
-      ws.onopen = function (event) {
-        console.log(event);
-
-        ws.send("Hello World!");
-      }
-
-      ws.onclose = function (event) {
-        console.log(event);
-      }
-
-      ws.onmessage = function (event) {
-        console.log(event);
-      }
-
-      // 1. Create the button
-      var button = document.createElement("button");
-      button.innerHTML = "Do Something";
-
-      // 2. Append somewhere
-      var body = document.getElementsByTagName("body")[0];
-      body.appendChild(button);
-
-      // 3. Add event handler
-      button.addEventListener ("click", function() {
-          ws.send(points);
-      });
-
-      mapboxgl.accessToken =
-        "pk.eyJ1Ijoic2lsYXNkZW1leiIsImEiOiJja2pzbHV0enkyNjN6Mnl0ZmhzMXZpdDB1In0.dYyuFMBeqUYo8U7z95DGfQ";
-      var map = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/mapbox/streets-v11",
-        center: [11.645390692998262, 46.7196204501802],
-        zoom: 7
-      });
-
-
-
-      /*
-        map.addLayer({
-          id: "route",
-          type: "line",
-          source: "route",
-          layout: {
-            "line-join": "round",
-            "line-cap": "round"
-          },
-          paint: {
-            "line-color": "#888",
-            "line-width": 8
-          }
-        });
-      });
-*/
-      let points = [];
-      //let points_lat = [];
-
-      map.on("click", function(e) {
-        // The event object (e) contains information like the
-        // coordinates of the point on the map that was clicked.
-        var marker = new mapboxgl.Marker({color:'#FF0000'})
-                .setLngLat(e.lngLat)
-                .addTo(map);
-        console.log("A click event has occurred at " + e.lngLat);
-        points.push(e.lngLat.lng);
-        points.push(e.lngLat.lat);
-
-      });
-
-
-
 
     </script>
   </body>
