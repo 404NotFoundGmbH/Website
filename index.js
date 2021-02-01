@@ -15,7 +15,7 @@ ws.onmessage = function (message) {
     if (message.data.toString().charCodeAt(0) === 91){
         drawLine(array);
     }else{
-        printDistance(array)
+        printDistance(array);
     }
 
 }
@@ -69,7 +69,7 @@ function drawLine(array){
 
     //console.log("Array length: " + array.length);
     // Loop to create 2D array using 1D array
-    for (let i = 0; i < (array.length)/2; i++) {
+    for (let i = 0; i < (array.length)/2 + 1; i++) {
         sorted_points[i] = [];
     }
 
@@ -83,6 +83,8 @@ function drawLine(array){
         i++;
     }
 
+    points_lng.push(array[0]);
+    points_lat.push(array[1]);
     //console.log("Points_lng length: " + points_lng.length);
 
     for (let i=0; i<(points_lng.length); i++){
