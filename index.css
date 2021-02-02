@@ -1,20 +1,20 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 </style>
-<style>
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 </style>
-<style>
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 </style>
 
-*{
-	margin: 0;
-	border: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;
-}
+  *{
+	  margin: 0;
+	  border: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: sans-serif;
+  }
 
 body{
 	background: rgb(52, 60, 64);
@@ -23,9 +23,9 @@ body{
 	font-weight: 300;
 	min-height: 100%;
 	display: flex;
-	flex-direction: column; 
+	flex-direction: column;
 	margin: 0;
-	
+
 }
 
 header{
@@ -67,7 +67,7 @@ main{
 
 nav{
 	flex: 5;
-	
+
 }
 
 .nav-links {
@@ -120,7 +120,7 @@ nav{
 	color: white;
 	margin-right: 10%;
 	margin-left: 10%;
-	
+
 }
 
 .introp{
@@ -129,7 +129,7 @@ nav{
 	font-family: 'Open Sans', sans-serif;
 	color: white;
 	padding-bottom: 60px;
-		margin-right: 10%;
+	margin-right: 10%;
 	margin-left: 10%;
 }
 
@@ -177,12 +177,12 @@ nav{
 	font-size: 1em;
 	background-color: white;
 	border-color: rgb(87, 104, 130);
-	background-color:rgb(87, 104, 130); 
+	background-color:rgb(87, 104, 130);
 	font-weight: 600;
 	border-radius: 10px;
 	display: flex;
-  	justify-content: center;
-  	margin: auto;
+	justify-content: center;
+	margin: auto;
 }
 
 .data-up input{
@@ -207,7 +207,7 @@ nav{
 }
 
 .img1::after{
-		content: '';
+	content: '';
 	display: block;
 	border:10px solid black;
 }
@@ -217,8 +217,8 @@ nav{
 	margin: 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	object-fit: cover;	
-} 
+	object-fit: cover;
+}
 .img2::after{
 	content: '';
 	display: block;
@@ -248,13 +248,13 @@ nav{
 	font-size: 1em;
 	background-color: white;
 	border-color: rgb(87, 104, 130);
-	background-color:rgb(87, 104, 130); 
+	background-color:rgb(87, 104, 130);
 	font-weight: 400;
 	border-radius: 10px;
 	display: flex;
-  	justify-content: center;
-  	margin: auto;
-  	outline: none;
+	justify-content: center;
+	margin: auto;
+	outline: none;
 }
 .divider{
 	border:solid white 2px;
@@ -302,7 +302,7 @@ nav{
 .slogex{
 
 	margin-bottom: 10	vh;
-	
+
 	height: 50vh;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -353,7 +353,7 @@ nav{
 }
 .slogan:hover{
 	transform: scale(1.1);
-  	transition: 0.3s;
+	transition: 0.3s;
 }
 
 footer{
@@ -381,7 +381,7 @@ footer{
 .footer-nav li{
 	list-style:none;
 	display:list-item;
-	
+
 }
 
 .footer-nav a{

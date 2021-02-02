@@ -10,6 +10,7 @@ ws.onclose = function (event) {
 }
 
 ws.onmessage = function (message) {
+    console.log("Message got(unpparsed): " + message.data);
     let array = JSON.parse(message.data);
     console.log("Message got: " + array);
     if (message.data.toString().charCodeAt(0) === 91){
@@ -127,115 +128,7 @@ function drawLine(array){
     });
 }
 
-function stringifyArrayPoints(string) {
-    let array = [];
-    array.push(parseFloat(string.slice(string.indexOf(",")+1, -1)));
-    array.push(parseFloat(string.slice(1, string.indexOf(",")-1)));
-    return array;
-}
-/*
-map.on('load', function () {
-    map.addSource('route', {
-        'type': 'geojson',
-        'data': {
-            'type': 'Feature',
-            'properties': {},
-            'geometry': {
-                'type': 'LineString',
-                'coordinates': [
-                    [11.799199286749342,46.51020570483951],
-                    [11.387211982061672,46.37014590609408],
-                    [11.980473700811558,46.241124839690315],
-                    [11.832158271124456,45.97071780704849],
-                    [-122.48404026031496, 37.83114119107971],
-                    [-122.48404026031496, 37.83049717427869],
-                    [-122.48348236083984, 37.829920943955045],
-                    [-122.48356819152832, 37.82954808664175],
-                    [-122.48507022857666, 37.82944639795659],
-                    [-122.48610019683838, 37.82880236636284],
-                    [-122.48695850372314, 37.82931081282506],
-                    [-122.48700141906738, 37.83080223556934],
-                    [-122.48751640319824, 37.83168351665737],
-                    [-122.48803138732912, 37.832158048267786],
-                    [-122.48888969421387, 37.83297152392784],
-                    [-122.48987674713133, 37.83263257682617],
-                    [-122.49043464660643, 37.832937629287755],
-                    [-122.49125003814696, 37.832429207817725],
-                    [-122.49163627624512, 37.832564787218985],
-                    [-122.49223709106445, 37.83337825839438],
-                    [-122.49378204345702, 37.83368330777276]
-                ]
-            }
-        }
-    });
-    map.addLayer({
-        'id': 'route',
-        'type': 'line',
-        'source': 'route',
-        'layout': {
-            'line-join': 'round',
-            'line-cap': 'round'
-        },
-        'paint': {
-            'line-color': '#888',
-            'line-width': 8
-        }
-    });
-});
-*/
-
 function printDistance(data){
-    let label = document.createElement("Label");
-    label.innerText = "Test"
+    document.getElementById('label1').innerHTML = 'Distance: ' + data;
 }
 
-/*
-// Sends POST request to server with adjazenzmatrix
-function requestServer(matrix) {
-    if(getSelectedAlgorithm() === 'ch'){
-        matrix = getSelectedAlgorithm() + JSON.stringify(points);
-    }else{
-        matrix = getSelectedAlgorithm() + matrix;
-    }
-    console.log(matrix);
-    const url = '/matrix';
-    fetch(url, {
-        method: 'POST',
-        body: matrix,
-    })  .then(response => response.text())
-        .then(response => {
-            // Splits toString() of Cities object and get data
-            console.log(response);
-            let cityArray;
-            let lengthString = response;
-            if(getSelectedAlgorithm() === 'ch'){
-                // Special pasing for Convex hull because it returns coordinates
-                response = response.slice(response.indexOf("sortedCities=[") + 14);
-                cityArray = response.split("City{cityName=");
-                for(let i = 0; i < cityArray.length; i++){
-                    cityArray[i] = cityArray[i].slice(0, cityArray[i].indexOf(',', cityArray[i].indexOf(',', 0) + 2))
-                    cityArray[i] = cityArray[i].slice(1, cityArray[i].length-1);
-                }
-                cityArray.shift();
-            }else{
-                // Parse all other algorithm results and get id
-                response = response.slice(response.indexOf("sortedCities=[") + 14);
-                cityArray = response.split("City{cityName=");
-                for(let i = 0; i < cityArray.length; i++) {
-                    if(cityArray[i].length === 0) {
-                        cityArray.shift();
-                        i--;
-                    }else {
-                        cityArray[i] = cityArray[i].slice(1, cityArray[i].indexOf("'", 1));
-                    }
-                }
-            }
-            // Get distance from result
-            lengthString = lengthString.slice(lengthString.indexOf("Cities{distance=") + 16, lengthString.indexOf(","));
-            var lengthFloat = parseFloat(lengthString).toFixed(2)
-            onClickPositionView.innerHTML = "Length of the route: " + lengthFloat + " km";
-            // Print lines on map
-            printLines(cityArray);
-        });
-}
- */
