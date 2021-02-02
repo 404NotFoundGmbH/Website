@@ -42,6 +42,7 @@ h2{
 }
 p{
 	font-size: 1.3vw;
+	text-transform: none;
 }
 .logo-container{
 	flex: 1;
@@ -49,7 +50,8 @@ p{
 }
 
 .logo{
-	max-width: 50%;
+	max-width: 30%;
+	min-width:30px;
 	vertical-align: middle;
 }
 
@@ -425,3 +427,4 @@ footer{
 	width: 100%;
 	height: auto;
 }
+
