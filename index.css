@@ -180,6 +180,23 @@ nav{
 	margin: auto;
 }
 
+.subres input{
+	height: 10vh;
+	width: 30vh;
+	text-transform: uppercase;
+	font-family:  'Roboto', sans-serif;
+	color: white;
+	font-size: 1em;
+	background-color: white;
+	border-color: rgb(87, 104, 130);
+	background-color:rgb(87, 104, 130);
+	font-weight: 600;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
 .data-up input{
 	padding-left: 1vw;
 }
