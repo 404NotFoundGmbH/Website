@@ -1,12 +1,7 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
-</style>
-  <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-</style>
-  <style>
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-</style>
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
 
   *{
 	  margin: 0;
@@ -301,7 +296,7 @@ nav{
 
 .slogex{
 
-	margin-bottom: 10	vh;
+	margin-bottom: 10vh;
 
 	height: 50vh;
 	display: grid;
