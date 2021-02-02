@@ -1,430 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
-
-
-*{
-	margin: 0;
-	border: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;
-}
-
-body{
-	background: rgb(52, 60, 64);
-	text-transform: capitalize;
-	font-family: sans-serif;
-	font-weight: 300;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	margin: 0;
-
-}
-
-header{
-	display: flex;
-	background-color: rgb(255,255,255);
-	align-items: center;
-	height: 10vh;
-	width: 100%;
-}
-
-
-main{
-	margin-left: 10%;
-	margin-right: 10%;
-}
-
-h2{
-	font-size: 2.2vw;
-}
-p{
-	font-size: 1.3vw;
-	text-transform: none;
-}
-.logo-container{
-	flex: 1;
-	margin-left: 10%;
-}
-
-.logo{
-	max-width: 30%;
-	min-width:30px;
-	vertical-align: middle;
-}
-
-.nav-links {
-	list-style: none;
-	display:grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.nav-link{
-	color: rgb(145, 145, 145);
-	text-transform:uppercase;
-	text-decoration: none;
-	font-size: 1vw;
-	font-weight: bold;
-	padding:.7vw;
-	position: relative;
-
-}
-
-.main-nav a:hover{
-	color: rgb(52,60,64);
-}
-
-.main-nav a::before{
-	content: '';
-	display: block;
-	height:5px;
-	background-color: black;
-	position: absolute;
-	width: 0%;
-	top:100%;
-	transition: all ease-in-out 200ms;
-}
-
-.main-nav a:hover::before{
-	width: 100%;
-}
-
-.intro{
-	background-image: url("van.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-right: -12.5%;
-	margin-left: -12.5%;
-	margin-bottom: 10vh;
-
-}
-
-.introh{
-
-	font-size: 3vw;
-	font-family: 'Varela', sans-serif;
-	padding-top: 10%;
-	margin:0;
-	color: white;
-	margin-right: 10%;
-	margin-left: 10%;
-
-}
-
-.introp{
-
-	font-size: 1.5vw;
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	padding-bottom: 60px;
-	margin-right: 10%;
-	margin-left: 10%;
-}
-
-.intro p::after{
-	content: '';
-	display: block;
-	border:2px solid white;
-}
-
-.van{
-	width: 100%;
-}
-
-nav{
-	flex: 5;
-
-}
-
-.data-up{
-	position: relative;
-}
-.data-up input{
-	padding-left: 1vw;
-}
-
-.data{
-
-	margin: auto;
-	width: 40%;
-	margin: auto;
-	height: 5vh;
-	border-radius: 10px;
-	font-family: 'Roboto',sans-serif;
-	background-color: rgba(52, 60, 64);
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	grid-gap: 10%;
-	align-items: center;
-	margin-bottom: 3vh;
-}
-
-.data input{
-	margin-left: 5%;
-	width: 100%;
-	height: 3vh;
-	border: none;
-	border-bottom: 2px solid white;
-	text-decoration: none;
-	outline:none;
-	background-color: rgb(52, 60, 64);
-	color: white;
-	font-size: 1vw;
-}
-
-.subres button{
-	height: 3vh;
-	text-transform: uppercase;
-	font-family:  'Roboto', sans-serif;
-	color: white;
-	font-size: 1vw;
-	background-color: white;
-	border-color: rgb(87, 104, 130);
-	background-color:rgb(87, 104, 130);
-	font-weight: 600;
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	margin: auto;
-}
-
-.github{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 5%;
-	align-items: center;
-	text-align: center;
-	margin-bottom: 10vh;
-
-}
-
-.github div{
-	display: grid;
-	grid-template-rows: 1fr 1fr 1fr 1fr;
-	height: 80%;
-	background-color: white;
-}
-
-.github div i{
-	margin-top: 10%;
-	font-size: 6vw;
-	color: rgb(87, 104, 130);
-	margin-bottom: 10%;
-}
-
-.github div p{
-	margin-right: 10%;
-	margin-left: 10%;
-
-}
-
-.github div a{
-	text-decoration: none;
-	color: black;
-	font-size: 1.5em;
-}
-
-.map{
-	border:5px solid rgb(102, 101, 100);
-	background-color: white;
-	margin-bottom: 15vh;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-}
-
-.txt{
-	margin-left: 10%;
-	text-align: center;
-	color: black;
-	font-family: 'Roboto',sans-serif;
-	font-weight: 400;
-}
-
-.txt p{
-	margin-left: 20%;
-	margin-right: 20%;
-	font-size: 1vw;
-
-}
-
-.txt a{
-	font-size:1.2vw;
-	color: black;
-	font-weight: 600;
-}
-
-.btn{
-	height: 3vh;
-	text-transform: uppercase;
-	font-family:  'Roboto', sans-serif;
-	color: white;
-	font-size: 1.2vw;
-	background-color: white;
-	border-color: rgb(87, 104, 130);
-	background-color:rgb(87, 104, 130);
-	font-weight: 400;
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	margin: auto;
-	outline: none;
-}
-
-.info{
-	text-align: center;
-	margin: auto;
-	margin-bottom: 15vh;
-	color: white;
-}
-
-.divider{
-	border:solid white 2px;
-}
-
-.corona{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-}
-
-.img1{
-	display: block;
-	height: 500px;
-	object-fit: scale-down;
-
-}
-
-.fast{
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	align-items: center;
-}
-
-.img2{
-	margin-left: auto;
-	height: 500px;
-	margin: 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	object-fit: cover;
-}
-
-.img2::after{
-	content: '';
-	display: block;
-	border:2px solid white;
-}
-
-.infopara{
-	margin-left: 10%;
-	margin-right: 10%;
-	text-align: left;
-}
-
-.slogex{
-
-	margin-bottom: 10vh;
-	height: 50vh;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 1vw;
-}
-
-.slogex{
-	background-image: url("lkw.jpg") ;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.slogan{
-
-	margin: 10%;
-	margin-bottom: 20%;
-	text-align: center;
-	border: 4px solid rgb(102, 101, 100);
-	vertical-align: middle;
-	background-color: rgba(255,255,255,0.7);
-
-}
-
-.slogan:hover{
-	background-color: white;
-	transform: scale(1.1);
-	transition: 0.3s;
-}
-
-.slogex i{
-	font-size: 3vw;
-	color: rgb(87, 104, 130);
-	margin-top: 5vh;
-	margin-bottom: 2vh;
-}
-
-.slogex h2{
-	font-size: 2vw;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-
-}
-
-.slogex p{
-	font-size: 1vw;
-	margin: 5%;
-}
-
-footer{
-	background-color: rgb(255, 255, 255);
-	height: 10vh;
-	width: 100%;
-}
-
-.footer-container{
-	margin-right: 10%;
-	margin-left: 10%;
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	height: 100%;
-	align-items: center;
-}
-.footer-nav ul{
-	margin: auto;
-	list-style: none;
-	text-transform: uppercase;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.footer-nav li{
-	list-style:none;
-	display:list-item;
-
-}
-
-.footer-nav a{
-	color: rgb(145, 145, 145);
-	text-transform:uppercase;
-	text-decoration: none;
-	font-size: 1vw;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-.social{
-	font-size: 3vw;
-	vertical-align: middle;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.social i{
-	color: rgb(145, 145, 145);
-}
-
-.responsive{
-	width: 100%;
-	height: auto;
-}
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="Logo.png">
+	<link rel="stylesheet" type="reset/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="https://kit.fontawesome.com/af7f92806b.js" crossorigin="anonymous"></script>
+
+	<title>Bartolini2.0</title>
+
+</head>
+
+<body>
+	
+	<header>
+
+		<div class="logo-container">
+			<img class="logo" width=100 src="Logo.png"/>
+		</div>
+
+		<nav class="main-nav">
+			
+			<ul class="nav-links">
+
+				<li><a class="nav-link" href="#">About Us</a></li>
+				<li><a class="nav-link" href="#">Delivery</a></li>
+				<li><a class="nav-link" href="#">Refund</a></li>
+				<li><a class="nav-link" href="#">Map</a></li>
+
+			<ul>
+
+		</nav>
+
+	</header>
+
+	<main>
+
+		<div class="intro">
+
+			<div class="van">
+				<h2 class="introh">we offer a unique experience</h2>
+				<p class="introp">
+					Reliable, Innovative, Fast Delivery
+				</p>
+		
+				<div class="data-up">
+				
+					<form>
+						<div class="data">
+							<div class="k1">
+								<label for="k1">
+								</label>
+								<input type="text" name="coordinates" id="k1" required autocomplete="off" placeholder="Tracking-Code">
+							</div>			
+							<div class="subres">
+								<button type="submit">Track</button>
+							</div>
+						</div>
+					</form>	
+				</div>
+			</div>
+		</div>
+
+		<div class="github">
+			<div>
+				<i class="fas fa-book"></i>
+				<h2>Pflichtenheft</h2>
+				<p>In the Pflichtenheft you can inform yourself about our planning, organization and the project's requisits</p>
+				<a href="">
+					<button class="btn">See more</button>
+				</a>
+			</div>
+			<div>
+				<i class="fas fa-info-circle"></i>
+				<h2>Glossar</h2>
+				<p>Go to the Glossar to find out more about important terms</p>
+				<a href="">
+					<button class="btn">See more</button>
+				</a>
+			</div>
+
+			<div>
+				<i class="fas fa-file-code"></i>
+				<h2>JavaDoc</h2>
+				<p>The JavaDoc gives you an overview of the program's requirements</p>
+				<a href="https://www.google.com/search?q=colorpicker&oq=colorpicker&aqs=chrome.0.69i59j0l3j0i395l4j0i10i395l2.1735j1j7&sourceid=chrome&ie=UTF-8">
+					<button class="btn">See more</button>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="map">
+			<img src="weltkarte.png" class="responsive">
+			<div class="txt">
+				<h2>22 global locations</h2>
+				<p>With our numerous locations we can deliver large quantities of packet to your customer.</p>
+				<a href="#">See more</a>
+			</div>
+		</div>
+			
+
+		<div class="info">
+			<div class="divider">
+			
+			</div>
+			<div class="corona">
+				
+				<img class="img1 responsive" src="C:\Users\Noa\Desktop\Programming\Projects\GASNN\food-delivery-02.jpg">
+				<div class="coronatxt">
+						
+					<p class="infopara">Service delivery innovation is an ongoing process; it must be embedded into the way a professional services firm functions and develops new products and services. We implement global processes, developing client collaboration and a networked organization. Our company continually seeks better ways to deliver services, because there is always room to improve.
+					</p>
+					<button class="btn">See more</button>
+				</div>
+			</div>
+			
+			<div class="divider">
+			</div>
+			
+			<div class="fast">
+				<div class="fasttxt">
+					<p class="infopara">
+					The motto “safety is paramount” is taken very seriously at Bartolini2.0. We adhere to the recommendations of the European Center for Disease Prevention and Control (ECDC) and the World Health Organization (WHO) as protecting our customers and our team members is our top priority.
+					</p>
+					<button class="btn">See more</button>
+				</div>
+				<img class="img2 responsive" src="C:\Users\Noa\Desktop\Programming\Projects\GASNN\delivery-service-with-masks-concept_23-2148535315.jpg">
+				
+			</div>
+			
+			<div class="divider">
+			</div>
+		</div>
+
+		<div class="slogex responsive">
+
+			<div class="slogan">
+				<i class="fas fa-check-circle"></i>
+				<h2>Reliable</h2>
+				<p>Careful handling of the packages</p>
+			</div>
+			
+			<div class="slogan">
+				<i class="fas fa-truck"></i>
+				<h2>Fast Delivery</h2>
+				<p>You'll receive your order in 2-3 business days</p>
+			</div>
+		
+			<div class="slogan">
+				<i class="fas fa-comments"></i>
+				<h2>Support</h2>
+				<p>24h/7 free customer support</p>
+			</div>
+			
+		</div>
+	
+	</main>
+
+	<footer>
+		
+		<div class="footer-container">
+			
+			<nav class="footer-nav">
+				<ul>
+					
+					<li><a href="#">Contact us</a></li>
+					<li><a href="#">Privacy and Policy</a></li>
+					<li><a href="#">Social Media</a></li>
+					
+			
+				</ul>
+
+			</nav>
+
+			<div class="social">
+				<i class="fab fa-instagram-square"></i>
+				<i class="fab fa-facebook-square"></i>
+				<i class="fab fa-twitter-square"></i>
+			</div>
+		</div>
+
+	</footer>
+</body>
