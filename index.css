@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 
 
-  *{
-	  margin: 0;
-	  border: 0;
-	  padding: 0;
-	  box-sizing: border-box;
-	  font-family: sans-serif;
-  }
+*{
+	margin: 0;
+	border: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
 
 body{
 	background: rgb(52, 60, 64);
@@ -37,8 +37,11 @@ main{
 	margin-right: 10%;
 }
 
-.van{
-	height: 60vh;
+h2{
+	font-size: 2.2vw;
+}
+p{
+	font-size: 1.3vw;
 }
 .logo-container{
 	flex: 1;
@@ -47,22 +50,6 @@ main{
 
 .logo{
 	height: 10vh;
-	vertical-align: middle;
-}
-
-.checkbtn{
-	font-size: 3em;
-	color: white;
-	flex: 1;
-	display: none;
-}
-#check{
-	display: none;
-}
-
-nav{
-	flex: 5;
-
 }
 
 .nav-links {
@@ -75,15 +62,17 @@ nav{
 	color: rgb(145, 145, 145);
 	text-transform:uppercase;
 	text-decoration: none;
-	font-size: 1em;
+	font-size: 1vw;
 	font-weight: bold;
-	padding:.7em;
+	padding:.7vw;
 	position: relative;
 
 }
+
 .main-nav a:hover{
 	color: rgb(52,60,64);
 }
+
 .main-nav a::before{
 	content: '';
 	display: block;
@@ -98,17 +87,20 @@ nav{
 .main-nav a:hover::before{
 	width: 100%;
 }
+
 .intro{
 	background-image: url("van.jpg");
 	background-repeat: no-repeat;
+	background-size: cover;
 	margin-right: -12.5%;
 	margin-left: -12.5%;
 	margin-bottom: 10vh;
+
 }
 
 .introh{
 
-	font-size: 3rem;
+	font-size: 3vw;
 	font-family: 'Varela', sans-serif;
 	padding-top: 10%;
 	margin:0;
@@ -120,7 +112,7 @@ nav{
 
 .introp{
 
-	font-size: 1.5rem;
+	font-size: 1.5vw;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
 	padding-bottom: 60px;
@@ -128,13 +120,25 @@ nav{
 	margin-left: 10%;
 }
 
-
-
 .intro p::after{
 	content: '';
 	display: block;
 	border:2px solid white;
 }
+
+.van{
+	width: 100vw;
+}
+
+nav{
+	flex: 5;
+
+}
+
+.data-up input{
+	padding-left: 1vw;
+}
+
 .data{
 
 	width: 40%;
@@ -147,7 +151,11 @@ nav{
 	grid-template-columns: 3fr 1fr;
 	grid-gap: 10%;
 	align-items: center;
+	margin-bottom: 3vh;
+}
 
+.data-up{
+	margin-bottom: 10vh;
 }
 
 .data input{
@@ -160,8 +168,7 @@ nav{
 	outline:none;
 	background-color: rgb(52, 60, 64);
 	color: white;
-	font-size: 1em;
-
+	font-size: 1vw;
 }
 
 .subres button{
@@ -169,7 +176,7 @@ nav{
 	text-transform: uppercase;
 	font-family:  'Roboto', sans-serif;
 	color: white;
-	font-size: 1em;
+	font-size: 1vw;
 	background-color: white;
 	border-color: rgb(87, 104, 130);
 	background-color:rgb(87, 104, 130);
@@ -180,25 +187,40 @@ nav{
 	margin: auto;
 }
 
-.subres input{
-	height: 10vh;
-	width: 30vh;
-	text-transform: uppercase;
-	font-family:  'Roboto', sans-serif;
-	color: white;
-	font-size: 1em;
-	background-color: white;
-	border-color: rgb(87, 104, 130);
-	background-color:rgb(87, 104, 130);
-	font-weight: 600;
-	border-radius: 10px;
-	display: flex;
-	justify-content: center;
-	margin: auto;
+.github{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 5%;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 10vh;
+
 }
 
-.data-up input{
-	padding-left: 1vw;
+.github div{
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	height: 80%;
+	background-color: white;
+}
+
+.github div i{
+	margin-top: 10%;
+	font-size: 6vw;
+	color: rgb(87, 104, 130);
+	margin-bottom: 10%;
+}
+
+.github div p{
+	margin-right: 10%;
+	margin-left: 10%;
+
+}
+
+.github div a{
+	text-decoration: none;
+	color: black;
+	font-size: 1.5em;
 }
 
 .map{
@@ -209,6 +231,200 @@ nav{
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 }
+
+.txt{
+	margin-left: 10%;
+	text-align: center;
+	color: black;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 400;
+}
+
+.txt p{
+	margin-left: 20%;
+	margin-right: 20%;
+	font-size: 1vw;
+
+}
+
+.txt a{
+	font-size:1.2vw;
+	color: black;
+	font-weight: 600;
+}
+
+.btn{
+	height: 3vh;
+	text-transform: uppercase;
+	font-family:  'Roboto', sans-serif;
+	color: white;
+	font-size: 1.2vw;
+	background-color: white;
+	border-color: rgb(87, 104, 130);
+	background-color:rgb(87, 104, 130);
+	font-weight: 400;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	outline: none;
+}
+
+.info{
+	text-align: center;
+	margin: auto;
+	margin-bottom: 15vh;
+	color: white;
+}
+
+.divider{
+	border:solid white 2px;
+}
+
+.corona{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+.img1{
+	display: block;
+	height: 500px;
+	object-fit: scale-down;
+
+}
+
+.fast{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	align-items: center;
+}
+
+.img2{
+	margin-left: auto;
+	height: 500px;
+	margin: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	object-fit: cover;
+}
+
+.img2::after{
+	content: '';
+	display: block;
+	border:2px solid white;
+}
+
+.infopara{
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: left;
+}
+
+.slogex{
+
+	margin-bottom: 10vh;
+	height: 50vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1vw;
+}
+
+.slogex{
+	background-image: url("lkw.jpg") ;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.slogan{
+
+	margin: 10%;
+	margin-bottom: 20%;
+	text-align: center;
+	border: 4px solid rgb(102, 101, 100);
+	vertical-align: middle;
+	background-color: rgba(255,255,255,0.7);
+
+}
+
+.slogan:hover{
+	background-color: white;
+	transform: scale(1.1);
+	transition: 0.3s;
+}
+
+.slogex i{
+	font-size: 3vw;
+	color: rgb(87, 104, 130);
+	margin-top: 5vh;
+	margin-bottom: 2vh;
+}
+
+.slogex h2{
+	font-size: 2vw;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+
+}
+
+.slogex p{
+	font-size: 1vw;
+	margin: 5%;
+}
+
+footer{
+	background-color: rgb(255, 255, 255);
+	height: 10vh;
+	width: 100%;
+}
+
+.footer-container{
+	margin-right: 10%;
+	margin-left: 10%;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	height: 100%;
+	align-items: center;
+}
+.footer-nav ul{
+	margin: auto;
+	list-style: none;
+	text-transform: uppercase;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-nav li{
+	list-style:none;
+	display:list-item;
+
+}
+
+.footer-nav a{
+	color: rgb(145, 145, 145);
+	text-transform:uppercase;
+	text-decoration: none;
+	font-size: 1vw;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.social{
+	font-size: 3vw;
+	vertical-align: middle;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.social i{
+	color: rgb(145, 145, 145);
+}
+
+.responsive{
+	width: 100%;
+	height: auto;
+}
+
 
 
 .img1{
