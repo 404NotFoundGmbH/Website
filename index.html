@@ -5,8 +5,8 @@
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="icon" href="https://cdn.glitch.com/d34dec44-3171-4d47-8d22-49d1f9c23a11%2FBartolini2-0.png?1610378291464"/>
+	<link rel="icon" href="Logo.png">
+	<link rel="stylesheet" type="reset/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script src="https://kit.fontawesome.com/af7f92806b.js" crossorigin="anonymous"></script>
 
@@ -18,23 +18,27 @@
 	
 	<header>
 
-		<div class="container">
+		<div class="logo-container">
 
-			<img class="logo" width=100 src="https://cdn.glitch.com/d34dec44-3171-4d47-8d22-49d1f9c23a11%2FBartolini2-0.png?1610378291464" alt="Logo"/>
-
-			<nav class="main-nav">
-				<ul>
-
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Delivery</a></li>
-					<li><a href="#">Refund</a></li>
-					<li><a href="#">Tracking</a></li>
-          			<li><a href="map.html">Map</a></li>
-
-				</ul>
-
-			</nav>
+			<img class="logo" width=100 src="Logo.png"/>
 		</div>
+
+		<nav class="main-nav">
+			
+			<ul class="nav-links">
+
+				<li><a class="nav-link" href="#">About Us</a></li>
+				<li><a class="nav-link" href="#">Delivery</a></li>
+				<li><a class="nav-link" href="#">Refund</a></li>
+				<li><a class="nav-link" href="#">Tracking</a></li>
+
+			<ul>
+
+		</nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
 
 	</header>
 
@@ -42,37 +46,89 @@
 
 		<div class="intro">
 
+			<div class="van">
+				<h2 class="introh">We offer the best service</h2>
+				<p class="introp">
+					Reliable, fast delivery, best support
+				</p>
+					<div class="data-up">
+		
+			<form action="index.php">
+				<div class="data">
+					<div class="k1">
+						<label for="k1">
+						</label>
+						<input type="text" name="coordinates" id="k1" required autocomplete="off" placeholder="Tracking-Code">
+					</div>			
+					<div class="subres">
+						<button type="submit">Track</button>
+					</div>
+				</div>
+			</form>	
+		</div>
+			</div>
 
-			<h2>We offer the best service</h2>
+		</div>
 
-			<p>
-				Reliable, fast delivery, best support
-			</p>
-			<div class="maps"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/	maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Via%20Dante,%2039E,%2039042%20Bressanone%20BZ+(My%20Business%20Name)&amp;t=&amp;z=15&amp;7ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+
+		<div class="map">
+			<img src="weltkarte.png" height=500>
+			<div class="txt">
+				<h2>22 global locations</h2>
+				<p>With our numerous locations we can deliver large quantities of packet to your customer.</p>
+				<a href="asdasd">See more</a>
+			</div>
+		</div>
+			
+
+		<div class="info">
+			<div class="divider">
+			</div>
+			<div class="corona">
+				
+				<img class="img1" src="C:\Users\Noa\Desktop\Programming\Projects\GASNN\food-delivery-02.jpg">
+				<div class="coronatxt">
+						
+					<p class="infopara">safety is paramount” is taken very seriously at Bartolini2.0. We adhere to the recommendations of the European Center for Disease Prevention and Control (ECDC) and the World Health Organization (WHO) as protecting our customers and our team members is our top priority</p>
+					<button class="btn">See more</button>
+				</div>
+			</div>
+			<div class="divider">
+			</div>
+			<div class="fast">
+				<div class="fasttxt">
+					<p class="infopara">
+The motto “safety is paramount” is taken very seriously at Bartolini2.0. We adhere to the recommendations of the European Center for Disease Prevention and Control (ECDC) and the World Health Organization (WHO) as protecting our customers and our team members is our top priority.</p>
+					<button class="btn">See more</button>
+				</div>
+				<img class="img2" src="C:\Users\Noa\Desktop\Programming\Projects\GASNN\delivery-service-with-masks-concept_23-2148535315.jpg">
+				
+			</div>
+			<div class="divider">
+			</div>
+		</div>
+
+		<div class="slogex">
+
+			<div class="slogan">
+				<i class="fas fa-check-circle"></i>
+				<h2>Reliable</h2>
+				<p>Money back if your package gets damaged</p>
 			</div>
 			
-			<div class="slogex">
-
-				<div class="left">
-					<h2>Reliable</h2>
-					<i class="fas fa-check-circle"></i>
-					<p>Money back if your package gets damaged</p>
-				</div>
-				
-				<div class="center">
-					<h2>Fast Delivery</h2>
-					<i class="fas fa-truck"></i>
-					<p>You'll receive your order in 2-3 business days</p>
-				</div>
-			
-				<div class="right">
-					<h2>Support</h2>
-					<i class="fas fa-comments"></i>
-					<p>24h/7 free customer support</p>
-				</div>
-				
-				
+			<div class="slogan">
+				<i class="fas fa-truck"></i>
+				<h2>Fast Delivery</h2>
+				<p>You'll receive your order in 2-3 business days</p>
 			</div>
+		
+			<div class="slogan">
+				<i class="fas fa-comments"></i>
+				<h2>Support</h2>
+				
+				<p>24h/7 free customer support</p>
+			</div>
+			
 		</div>
 	
 	</main>
@@ -87,9 +143,17 @@
 					<li><a href="#">Contact us</a></li>
 					<li><a href="#">Privacy and Policy</a></li>
 					<li><a href="#">Social Media</a></li>
-
+					
+			
 				</ul>
+
 			</nav>
+
+			<div class="social">
+				<i class="fab fa-instagram-square"></i>
+				<i class="fab fa-facebook-square"></i>
+				<i class="fab fa-twitter-square"></i>
+			</div>
 		</div>
 
 	</footer>
