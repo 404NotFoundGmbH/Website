@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"JUnit"},{"l":"resources"},{"l":"test"},{"l":"websocket"}]
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"resources"},{"l":"test"},{"l":"websocket"}];updateSearchResults();
