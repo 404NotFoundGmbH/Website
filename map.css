@@ -6,14 +6,17 @@ body {
 
       button {
         position: absolute;
-        bottom: 1.7%;
-        right: 5%;
         line-height: 60px;
         font-weight: bold;
         padding: 0 40px;
         background: white;
         border: 2px black solid;
         width: 300px;
+      }
+
+      #label{
+          bottom: 1.7%;
+          right: 60%;
       }
 
       #labelal{
@@ -33,14 +36,15 @@ body {
 
       }
 
-      #btn2{
+      #convex{
         right: 0;
         left: 35%;
+        bottom: 1.7%;
       }
 
-      #btn3{
+      #nearest{
         right: 35%;
-
+        bottom: 1.7%;
       }
 
       button:hover {

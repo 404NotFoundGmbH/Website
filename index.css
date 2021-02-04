@@ -189,7 +189,6 @@ nav{
 	border-color: rgb(87, 104, 130);
 	background-color:rgb(87, 104, 130); 
 	font-weight: 600;
-	border-radius: 10px;
 	display: flex;
   	justify-content: center;
   	margin: auto;
@@ -269,13 +268,13 @@ nav{
 	font-size: 1.2vw;
 	background-color: white;
 	border-color: rgb(87, 104, 130);
-	background-color:rgb(87, 104, 130); 
+	background-color:rgb(87, 104, 130);
 	font-weight: 400;
 	border-radius: 10px;
 	display: flex;
-  	justify-content: center;
-  	margin: auto;
-  	outline: none;
+	justify-content: center;
+	margin: auto;
+	outline: none;
 }
 
 .info{
@@ -431,4 +430,12 @@ footer{
 .responsive{
 	width: 100%;
 	height: auto;
+}
+
+#convex{
+	border-radius: 100px;
+}
+
+#nearest{
+
 }

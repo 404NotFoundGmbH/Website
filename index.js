@@ -20,24 +20,17 @@ ws.onmessage = function (message) {
     //}
 
 }
-
-// 1. Create the button
-let button = document.createElement("button");
-button.innerHTML = "Transfer points";
-
-// 2. Append somewhere
-let body = document.getElementsByTagName("body")[0];
-body.appendChild(button);
-
-// 3. Add event handler
-button.addEventListener ("click", function() {
+function convexButton(){
     console.log("Points to be sent: " + points);
-    ws.send(JSON.stringify(points));
-});
+    let str = JSON.stringify(points);
+    ws.send(str + "1");
+}
 
-var elem2 = document.createElement('label');
-elem2.innerHTML = "something";
-document.getElementsByTagName('body')[0].appendChild(elem2);
+function  nearestButton(){
+    console.log("Points to be sent: " + points);
+    let str = JSON.stringify(points);
+    ws.send(str + "2");
+}
 
 mapboxgl.accessToken =
     "pk.eyJ1Ijoic2lsYXNkZW1leiIsImEiOiJja2pzbHV0enkyNjN6Mnl0ZmhzMXZpdDB1In0.dYyuFMBeqUYo8U7z95DGfQ";
@@ -151,7 +144,7 @@ function printDistance(array){
         }
     }
 
-    document.getElementById('label1').innerHTML = 'Distance: ' + distance;
+    document.getElementById("distance").innerHTML = "Distance: " + distance;
 }
 
 Number.prototype.toRad = function() {
