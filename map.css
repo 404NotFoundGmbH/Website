@@ -6,6 +6,8 @@ body {
 
       button {
         position: absolute;
+        bottom:1.7%;
+        right: 5%;
         line-height: 60px;
         font-weight: bold;
         padding: 0 40px;
