@@ -13,11 +13,11 @@ ws.onmessage = function (message) {
     console.log("Message got(unpparsed): " + message.data);
     let array = JSON.parse(message.data);
     console.log("Message got: " + array);
-    if (message.data.toString().charCodeAt(0) === 91){
+    //if (message.data.toString().charCodeAt(0) === 91){
         drawLine(array);
-    }else{
+    //}else{
         printDistance(array);
-    }
+    //}
 
 }
 
@@ -84,8 +84,8 @@ function drawLine(array){
         i++;
     }
 
-    points_lng.push(array[0]);
-    points_lat.push(array[1]);
+    //points_lng.push(array[0]);
+    //points_lat.push(array[1]);
     //console.log("Points_lng length: " + points_lng.length);
 
     for (let i=0; i<(points_lng.length); i++){
@@ -128,7 +128,47 @@ function drawLine(array){
     });
 }
 
-function printDistance(data){
-    document.getElementById('label1').innerHTML = 'Distance: ' + data;
+function printDistance(array){
+    let lon = [];
+    let lat = [];
+    let distance = 0;
+
+    console.log("Arraay length: " + array.length);
+
+    for (let i=0;i<array.length;i++){
+        if (i%2 == 0){
+            lon.push(array[i]);
+            lat.push(array[i+1]);
+        }
+    }
+
+
+    for (let i=0;i<array.length-3;i++){
+        if (i%2 == 0){
+            console.log("Calculating distance from:\n x: " + array[i] + "\n y: " + array[i+1] + "\n\n x: " + array[i+2] + "\n y: " + array[i+3]);
+            distance+= haversineDistance(array[i],array[i+1],array[i+2],array[1+3]);
+        }
+    }
+
+    console.log(haversineDistance(51.5, 0, 38.8, -77.1));
+
+    document.getElementById('label1').innerHTML = 'Distance: ' + distance;
 }
 
+// haversine distance calculates distance between coordinates with earth rounding included
+function haversineDistance(lon1,lat1,lon2,lat2) {
+    // Radius of the Earth in miles
+    var R = 3958.8;
+    // Convert degrees to radians
+    var rlat1 = lat1 * (Math.PI/180);
+    // Convert degrees to radians
+    var rlat2 = lat2 * (Math.PI/180);
+    // Radian difference (latitudes)
+    var difflat = rlat2-rlat1;
+    // Radian difference (longitudes)
+    var difflon = (lon2-lon1) * (Math.PI/180);
+
+    var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
+    d *= 1.609344
+    return d;
+}
