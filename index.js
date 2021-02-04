@@ -146,29 +146,32 @@ function printDistance(array){
     for (let i=0;i<array.length-3;i++){
         if (i%2 == 0){
             console.log("Calculating distance from:\n x: " + array[i] + "\n y: " + array[i+1] + "\n\n x: " + array[i+2] + "\n y: " + array[i+3]);
-            distance+= haversineDistance(array[i],array[i+1],array[i+2],array[1+3]);
+            distance+= haversineDistance(array[i],array[i+1],array[i+2],array[i+3]);
+            console.log("Distance: " + distance);
         }
     }
-
-    console.log(haversineDistance(51.5, 0, 38.8, -77.1));
 
     document.getElementById('label1').innerHTML = 'Distance: ' + distance;
 }
 
+Number.prototype.toRad = function() {
+    return this * Math.PI / 180;
+}
+
 // haversine distance calculates distance between coordinates with earth rounding included
 function haversineDistance(lon1,lat1,lon2,lat2) {
-    // Radius of the Earth in miles
-    var R = 3958.8;
-    // Convert degrees to radians
-    var rlat1 = lat1 * (Math.PI/180);
-    // Convert degrees to radians
-    var rlat2 = lat2 * (Math.PI/180);
-    // Radian difference (latitudes)
-    var difflat = rlat2-rlat1;
-    // Radian difference (longitudes)
-    var difflon = (lon2-lon1) * (Math.PI/180);
 
-    var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
-    d *= 1.609344
+    var R = 6371; // km
+//has a problem with the .toRad() method below.
+    var x1 = lat2-lat1;
+    var dLat = x1.toRad();
+    var x2 = lon2-lon1;
+    var dLon = x2.toRad();
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+
     return d;
 }
