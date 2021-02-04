@@ -37,13 +37,16 @@ body {
 
       #convex{
         right: 0;
-        left: 35%;
-        bottom: 1.7%;
+        left: 27.5%;
       }
 
       #nearest{
-        right: 35%;
-        bottom: 1.7%;
+        left: 42.5%;
+
+      }
+
+      #nearest_extended{
+        right: 27.5%;
       }
 
       button:hover {
