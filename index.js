@@ -32,6 +32,12 @@ function  nearestButton(){
     ws.send(str + "2");
 }
 
+function  extNearestButton(){
+    console.log("Points to be sent: " + points);
+    let str = JSON.stringify(points);
+    ws.send(str + "2");
+}
+
 mapboxgl.accessToken =
     "pk.eyJ1Ijoic2lsYXNkZW1leiIsImEiOiJja2pzbHV0enkyNjN6Mnl0ZmhzMXZpdDB1In0.dYyuFMBeqUYo8U7z95DGfQ";
 var map = new mapboxgl.Map({
