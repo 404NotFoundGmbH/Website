@@ -20,20 +20,19 @@ body {
       }
 
       #distance{
-        text-align: center;
         display: inline-block;
         position: absolute;
         bottom: 1.7%;
         right: 0;
         left: 5%;
         line-height: 60px;
-        font-weight: bold;
         padding: 0 40px;
+        width: 200px;
+        border: 2px black solid;      
+        text-align: center;
+        font-weight: bold;
         background: black;
         color: white;
-        border: 2px black solid;
-        width: 200px;
-
       }
 
       #convex{
