@@ -20,22 +20,43 @@ ws.onmessage = function (message) {
     //}
 
 }
+
+let counter=0;
+
 function convexButton(){
+    if (counter!=0){
+        clearLines();
+    }
+
     console.log("Points to be sent: " + points);
     let str = JSON.stringify(points);
+    counter++;
     ws.send(str + "1");
 }
 
 function  nearestButton(){
+    if (counter!=0){
+        clearLines();
+    }
     console.log("Points to be sent: " + points);
     let str = JSON.stringify(points);
+    counter++;
     ws.send(str + "2");
 }
 
 function  extNearestButton(){
+    if (counter!=0){
+        clearLines();
+    }
     console.log("Points to be sent: " + points);
     let str = JSON.stringify(points);
+    counter++;
     ws.send(str + "2");
+}
+
+function clearLines(){
+    map.removeLayer("route");
+    map.removeSource("route");
 }
 
 mapboxgl.accessToken =
